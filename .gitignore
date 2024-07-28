@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### INFRA ###
+/docker-compose.yml
+/src/main/resources/application.properties
