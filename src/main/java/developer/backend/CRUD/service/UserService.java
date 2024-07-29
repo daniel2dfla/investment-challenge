@@ -1,8 +1,10 @@
 package developer.backend.CRUD.service;
 
 import developer.backend.CRUD.controller.DTO.CreateUserDto;
+import developer.backend.CRUD.controller.DTO.UpdateUserDto;
 import developer.backend.CRUD.entity.User;
 import developer.backend.CRUD.repository.UserRepository;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
@@ -41,5 +43,29 @@ public class UserService {
 
     public List<User> getAllUser() {
         return userRepository.findAll();
+    }
+
+    public void updateUserById(String userId, UpdateUserDto updateUserDto){
+
+        var userEntity = userRepository.findById(UUID.fromString(userId));
+
+        if(userEntity.isPresent()) {
+            var user = userEntity.get();
+            if(updateUserDto.username() != null) {
+                user.setUsername(updateUserDto.username());
+            }
+            if(updateUserDto.password() != null) {
+                user.setPassword(updateUserDto.password());
+            }
+            userRepository.save(user);
+        }
+    }
+
+    public void deleteUserById(String userId) {
+        var userExists = userRepository.existsById(UUID.fromString(userId));
+
+        if(userExists) {
+            userRepository.deleteById(UUID.fromString(userId));
+        }
     }
 }
