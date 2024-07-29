@@ -1,11 +1,13 @@
 package developer.backend.CRUD.controller;
 
 import developer.backend.CRUD.controller.DTO.CreateUserDto;
+
 import developer.backend.CRUD.controller.DTO.UpdateUserDto;
 import developer.backend.CRUD.entity.User;
 import developer.backend.CRUD.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -43,7 +45,7 @@ public class UserController {
         var list = userService.getAllUser();
         return ResponseEntity.ok(list);
     }
-
+  
     @PutMapping("/{userId}")
     public ResponseEntity<Void> updateUserById(@PathVariable("userId") String userId,
                                                @RequestBody UpdateUserDto updateUserDto){
@@ -57,4 +59,5 @@ public class UserController {
 
         return ResponseEntity.noContent().build();
     }
+
 }
