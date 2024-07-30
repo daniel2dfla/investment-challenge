@@ -41,7 +41,7 @@ O objetivo é criar uma REST API CRUD com o Java 21, Spring Boot e MySQL. Projet
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/daniel2dfla/desafio-backend.git>
+$ git clone <https://github.com/daniel2dfla/investment-challenge.git>
 
 # Instale as dependências
 $ mvn clean install
