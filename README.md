@@ -23,7 +23,7 @@ O objetivo é criar uma REST API CRUD com o Java 21, Spring Boot e MySQL. Projet
 
     
 ### Tecnologias Utilizadas
-- Linguagem: Java 21
+- Linguagem: Java
 - Framework: Spring Boot
 - Banco de Dados: MySQL
 
